@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.171484375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/bgcolorforlogin.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/circle_blue.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/circlebg.xml" value="0.17083333333333334" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/ic_baseline_attach_file_24.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/ic_launcher_background.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/loginbg.xml" value="0.20729166666666668" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/logostyle.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/otparea.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/profileselectbg.xml" value="0.105859375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/recieved_drawable.xml" value="0.1972972972972973" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/sent_drawable.xml" value="0.1972972972972973" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/side_nav_bar.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/splash_gradient.xml" value="0.14322916666666666" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/splashbg.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/whitecard.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_camera.xml" value="0.14344262295081966" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_chat.xml" value="0.152" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_contact_list.xml" value="0.14754098360655737" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_main2.xml" value="0.176" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_main3.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_message.xml" value="0.176" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_profile.xml" value="0.152" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_setup_profile.xml" value="0.17578125" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_story.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_user_screen.xml" value="0.15949453551912568" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_verify_otp.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/contacts_list_item.xml" value="0.14344262295081966" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/contacts_list_view.xml" value="0.14344262295081966" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/content_main.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_call.xml" value="0.127734375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_camera.xml" value="0.144" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_chat.xml" value="0.127734375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_gallery.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_settings.xml" value="0.127734375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/fragment_story.xml" value="0.127734375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/item_recieved.xml" value="0.18032786885245902" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/item_sent.xml" value="0.264" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/item_status.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/nav_header_main.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/row_conversation.xml" value="0.4" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/menu/menu.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/menu/menu_icons.xml" value="0.1875" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/menu/topmenu.xml" value="0.2" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.199609375" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

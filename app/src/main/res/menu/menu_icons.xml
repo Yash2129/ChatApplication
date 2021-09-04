@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/chat_btn"
+        android:icon="@drawable/ic_chat"
+        android:title="Chat" />
+    <item
+        android:id="@+id/story_btn"
+        android:icon="@drawable/ic_stories"
+        android:title="Story" />
+    <item
+        android:id="@+id/camera_btn"
+        android:icon="@drawable/ic_camera"
+        android:title="Camera" />
+    <item
+        android:id="@+id/call_btn"
+        android:icon="@drawable/ic_phonecall"
+        android:title="Call" />
+    <item
+        android:id="@+id/settings_btn"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+</menu>

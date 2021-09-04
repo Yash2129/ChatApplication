@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "616531823907",
+    "project_id": "twaddle-c7596",
+    "storage_bucket": "twaddle-c7596.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616531823907:android:d3505640c1005c771d9096",
+        "android_client_info": {
+          "package_name": "com.android.twaddle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616531823907-vhkcjghdmfl7elt0bbljolp36r180h62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEkr83IGHaK4OrNA2Ju2aZpxuW4DORf6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616531823907-vhkcjghdmfl7elt0bbljolp36r180h62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
