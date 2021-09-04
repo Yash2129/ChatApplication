@@ -66,8 +66,8 @@ public class ChatActivity extends AppCompatActivity {
                         break;
                     case R.id.settings_btn:
 
-                        //Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
-                        //startActivity(intent);
+                        Intent intent4 = new Intent(getApplicationContext(), ChatSettings.class);
+                        startActivity(intent4);
                         //Toast.makeText(ChatActivity.this,"Settings Selected",Toast.LENGTH_SHORT).show();
                         break;
                 }
