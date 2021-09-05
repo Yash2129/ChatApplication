@@ -61,7 +61,7 @@
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:ems="10"
                 android:hint="Enter Your Name"
                 android:inputType="textPersonName"
@@ -84,7 +84,7 @@
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -106,22 +106,38 @@
             <EditText
                 android:id="@+id/etAbout"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/savebtn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_bg"
-            android:padding="5dp"
-            android:text="Save"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_bg"
+
+                android:text="LogOut"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/savebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/btn_bg"
+
+                android:text="Save"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
 
     </LinearLayout>
 

@@ -4,7 +4,6 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ChatApplication/app/src/main/res/drawable/about.xml" value="0.12037037037037036" />
-        <entry key="..\:/ChatApplication/app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="..\:/ChatApplication/app/src/main/res/layout/activity_chat_settings.xml" value="0.16666666666666666" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.171484375" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.199609375" />
@@ -25,6 +24,7 @@
         <entry key="..\:/yashj/Twaddle/app/src/main/res/drawable/whitecard.xml" value="0.199609375" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_camera.xml" value="0.14344262295081966" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_chat.xml" value="0.152" />
+        <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_chat_settings.xml" value="0.176" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_contact_list.xml" value="0.14754098360655737" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/yashj/Twaddle/app/src/main/res/layout/activity_main.xml" value="0.2" />

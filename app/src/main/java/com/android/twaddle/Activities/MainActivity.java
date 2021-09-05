@@ -1,12 +1,11 @@
 package com.android.twaddle.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-
-
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.twaddle.R;
 

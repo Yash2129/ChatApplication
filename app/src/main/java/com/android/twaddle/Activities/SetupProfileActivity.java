@@ -1,9 +1,5 @@
 package com.android.twaddle.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,8 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.android.twaddle.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.twaddle.Models.User;
+import com.android.twaddle.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -87,7 +87,7 @@ public class SetupProfileActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                         dialog.dismiss();
-                                                        Intent intent = new Intent(getApplicationContext(),Main.class);
+                                                        Intent intent = new Intent(getApplicationContext(),ChatActivity.class);
                                                         startActivity(intent);
                                                         finish();
                                                     }
