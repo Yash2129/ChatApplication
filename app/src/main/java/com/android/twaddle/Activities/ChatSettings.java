@@ -24,6 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 public class ChatSettings extends AppCompatActivity {
 
@@ -52,7 +55,24 @@ public class ChatSettings extends AppCompatActivity {
             }
         });
 
-        //to be coded after merging with code time 5:44
+        binding.savebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String about=binding.etAbout.getText().toString();
+                String name=binding.etName.getText().toString();
+                String phone=binding.etPhone.getText().toString();
+
+                HashMap<String,Object>obj = new HashMap<>();
+                obj.put("name",name);
+                obj.put("phoneNumber",phone);
+                obj.put("about",about);
+
+                database.getReference().child("users").child(FirebaseAuth.getInstance().getUid())
+                        .updateChildren(obj);
+                Toast.makeText(ChatSettings.this, "Saved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         database.getReference().child("users").child(FirebaseAuth.getInstance().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -60,8 +80,15 @@ public class ChatSettings extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         User users =snapshot.getValue(User.class);
-                        String bitmap=users.getProfileImage();
-                        binding.profileImage.setImageURI(Uri.parse(bitmap));
+                        Picasso.get()
+                                .load(users.getProfileImage())
+                                .placeholder(R.drawable.avatar)
+                                .into(binding.profileImage);
+
+                        binding.etAbout.setText(users.getAbout());
+                        binding.etName.setText(users.getName());
+                        binding.etPhone.setText(users.getPhoneNumber());
+
                     }
 
                     @Override

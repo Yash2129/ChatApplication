@@ -38,7 +38,7 @@ public class Main extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null){
             String phoneNumber = currentUser.getPhoneNumber();
-            startActivity(new Intent(Main.this,ChatActivity.class));
+            startActivity(new Intent(Main.this,Biometric.class));
 
         }
         else {
