@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -61,11 +62,18 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
 
                         if (snapshot.exists()) {
                             String lastMsg = snapshot.child("lastMsg").getValue(String.class);
-                           //long lastmsgtime= message.getTimestamp();
+                            Calendar c = Calendar.getInstance();
+                            System.out.println("Current time => "+c.getTime());
+
+                            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            String formattedDate = df.format(c.getTime());
+                            // formattedDate have current date/time
+
 
 
 
                             holder.binding.lastMsg.setText(lastMsg);
+                            holder.binding.msgTime.setText(formattedDate);
 
 
                         }else {
@@ -93,6 +101,7 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
             public void onClick(View view) {
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("name",user.getName());
+
                 intent.putExtra("uid",user.getUid());
                 intent.putExtra("profile", user.getProfileImage());
                 context.startActivity(intent);
