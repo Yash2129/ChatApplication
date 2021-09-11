@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.twaddle.Activities.MessageActivity;
+import com.android.twaddle.Models.Message;
 import com.android.twaddle.Models.User;
 import com.android.twaddle.R;
 import com.android.twaddle.databinding.RowConversationBinding;
@@ -21,11 +22,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
 
     Context context;
     ArrayList<User> users;
+    Message message;
 
 
     public UserAdapter(Context context, ArrayList<User> users){
@@ -58,16 +61,16 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
 
                         if (snapshot.exists()) {
                             String lastMsg = snapshot.child("lastMsg").getValue(String.class);
-                            long time = snapshot.child("lastMsgTime").getValue(long.class);
-
+                           //long lastmsgtime= message.getTimestamp();
 
 
 
                             holder.binding.lastMsg.setText(lastMsg);
-                            holder.binding.msgTime.setText((int) time);
+
 
                         }else {
                             holder.binding.lastMsg.setText("Tap to Chat");
+
                         }
                     }
 
@@ -91,7 +94,7 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("name",user.getName());
                 intent.putExtra("uid",user.getUid());
-
+                intent.putExtra("profile", user.getProfileImage());
                 context.startActivity(intent);
             }
         });

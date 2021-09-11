@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.twaddle.Adapters.MessagesAdapter;
 import com.android.twaddle.Models.Message;
+import com.android.twaddle.R;
 import com.android.twaddle.databinding.ActivityMessageBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,13 +43,17 @@ public class MessageActivity extends AppCompatActivity {
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
-        binding.recyclerView.requestFocus(View.FOCUS_DOWN);
+        binding.recyclerView.smoothScrollToPosition(messages.size());
 
 
 
         String name = getIntent().getStringExtra("name");
         String receiverUid = getIntent().getStringExtra("uid");
         String senderUid = FirebaseAuth.getInstance().getUid();
+        Picasso.get()
+                .load(getIntent().getStringExtra("profile"))
+                .placeholder(R.drawable.avatar)
+                .into(binding.profileChatImage);
 
         senderRoom = senderUid + receiverUid;
         receiverRoom = receiverUid + senderUid;
@@ -65,7 +71,8 @@ public class MessageActivity extends AppCompatActivity {
                             Message message = snapshot1.getValue(Message.class);
                             messages.add(message);
                         }
-                        adapter.notifyDataSetChanged();
+                        adapter.notifyItemInserted(messages.size());
+                        binding.recyclerView.smoothScrollToPosition(messages.size());
                     }
 
                     @Override

@@ -59,6 +59,7 @@ public class MessagesAdapter extends RecyclerView.Adapter {
         if (holder.getClass() == SentViewHolder.class){
             SentViewHolder viewHolder = (SentViewHolder)holder;
             viewHolder.binding.message.setText(message.getMessage());
+
         }else {
             RecieverViewHolder viewHolder = (RecieverViewHolder)holder;
             viewHolder.binding.message.setText(message.getMessage());
@@ -67,6 +68,7 @@ public class MessagesAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
+
         return messages.size();
     }
 
@@ -76,6 +78,7 @@ public class MessagesAdapter extends RecyclerView.Adapter {
         public SentViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = ItemSentBinding.bind(itemView);
+
         }
     }
 
@@ -87,4 +90,5 @@ public class MessagesAdapter extends RecyclerView.Adapter {
             binding = ItemSentBinding.bind(itemView);
         }
     }
+
 }

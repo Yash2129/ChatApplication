@@ -91,7 +91,7 @@
             android:layout_weight="0"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_chat_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
