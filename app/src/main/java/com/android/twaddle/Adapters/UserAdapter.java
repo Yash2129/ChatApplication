@@ -5,15 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.twaddle.Activities.MessageActivity;
-import com.android.twaddle.R;
 import com.android.twaddle.Models.User;
+import com.android.twaddle.R;
 import com.android.twaddle.databinding.RowConversationBinding;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,6 +64,7 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
 
 
                             holder.binding.lastMsg.setText(lastMsg);
+                            holder.binding.msgTime.setText((int) time);
 
                         }else {
                             holder.binding.lastMsg.setText("Tap to Chat");
@@ -79,6 +78,7 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
                 });
 
         holder.binding.userProfilename.setText(user.getName());
+
 
 
         Glide.with(context).load(user.getProfileImage())

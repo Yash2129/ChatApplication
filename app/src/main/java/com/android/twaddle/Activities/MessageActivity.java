@@ -1,13 +1,11 @@
 package com.android.twaddle.Activities;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 import com.android.twaddle.Adapters.MessagesAdapter;
 import com.android.twaddle.Models.Message;
@@ -31,6 +29,7 @@ public class MessageActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     String senderRoom, receiverRoom;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +41,9 @@ public class MessageActivity extends AppCompatActivity {
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.requestFocus(View.FOCUS_DOWN);
+
+
 
         String name = getIntent().getStringExtra("name");
         String receiverUid = getIntent().getStringExtra("uid");
