@@ -63,7 +63,7 @@ public class UserAdapter  extends RecyclerView.Adapter<UserAdapter.UserViewHolde
                         if (snapshot.exists()) {
                             String lastMsg = snapshot.child("lastMsg").getValue(String.class);
                             Calendar c = Calendar.getInstance();
-                            System.out.println("Current time => "+c.getTime());
+
 
                             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                             String formattedDate = df.format(c.getTime());

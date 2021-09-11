@@ -35,7 +35,8 @@
                 android:background="@android:color/transparent"
                 android:ems="10"
                 android:hint="Type a Message.."
-                android:inputType="textPersonName"
+
+                android:inputType="textMultiLine"
                 android:padding="10dp"
                 android:textSize="14sp" />
 
