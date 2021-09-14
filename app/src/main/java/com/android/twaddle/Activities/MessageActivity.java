@@ -164,7 +164,7 @@ public class MessageActivity extends AppCompatActivity {
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                sendNotification(user.getName(),message.getMessage(),token);
+                                sendNotification(getIntent().getStringExtra("name"),message.getMessage(),token);
                             }
                         });
 
