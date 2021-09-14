@@ -53,7 +53,7 @@ public class SendImageActivity extends AppCompatActivity {
 
         database.getReference().child("chats")
                 .child(senderRoom)
-                .child("messages")
+
                 .child("Image")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -78,7 +78,7 @@ public class SendImageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 database.getReference().child("chats")
                         .child(senderRoom)
-                        .child("messages")
+
                         .child("Image")
                         .push()
                         .setValue(selectedImage).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -87,7 +87,7 @@ public class SendImageActivity extends AppCompatActivity {
 
                         database.getReference().child("chats")
                                 .child(receiverRoom)
-                                .child("messages")
+
                                 .child("Image")
                                 .push()
                                 .setValue(selectedImage).addOnSuccessListener(new OnSuccessListener<Void>() {
