@@ -53,25 +53,7 @@ public class SendImageActivity extends AppCompatActivity {
 
         database.getReference().child("chats")
                 .child(senderRoom)
-
-                .child("image")
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        messages.clear();
-                        for (DataSnapshot snapshot1: snapshot.getChildren()){
-                            Message message = snapshot1.getValue(Message.class);
-                            messages.add(message);
-                        }
-                        adapter.notifyItemInserted(messages.size());
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                .child("image");
 
         binding.btnSendImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +68,6 @@ public class SendImageActivity extends AppCompatActivity {
 
                         database.getReference().child("chats")
                                 .child(receiverRoom)
-
                                 .child("image")
                                 .push()
                                 .setValue(selectedImage).addOnSuccessListener(new OnSuccessListener<Void>() {
