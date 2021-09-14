@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.twaddle.Adapters.MessagesAdapter;
 import com.android.twaddle.Models.Message;
+import com.android.twaddle.Models.User;
 import com.android.twaddle.R;
 import com.android.twaddle.databinding.ActivityMessageBinding;
 import com.android.volley.AuthFailureError;
@@ -57,6 +58,7 @@ public class MessageActivity extends AppCompatActivity {
     String receiverUid;
     String senderUid;
 
+    User user;
     ProgressDialog dialog;
 
     @Override
@@ -64,6 +66,8 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMessageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
 
         database = FirebaseDatabase.getInstance();
         FirebaseMessaging.getInstance()
@@ -160,7 +164,7 @@ public class MessageActivity extends AppCompatActivity {
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                sendNotification(name,message.getMessage(),token);
+                                sendNotification(user.getName(),message.getMessage(),token);
                             }
                         });
 
