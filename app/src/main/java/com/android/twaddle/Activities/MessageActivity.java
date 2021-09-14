@@ -1,9 +1,13 @@
 package com.android.twaddle.Activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -31,6 +35,10 @@ public class MessageActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     String senderRoom, receiverRoom;
+    String receiverUid;
+    String senderUid;
+    private static final int PICK_IMAGE=1;
+    Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +56,8 @@ public class MessageActivity extends AppCompatActivity {
 
 
         String name = getIntent().getStringExtra("name");
-        String receiverUid = getIntent().getStringExtra("uid");
-        String senderUid = FirebaseAuth.getInstance().getUid();
+        receiverUid = getIntent().getStringExtra("uid");
+        senderUid = FirebaseAuth.getInstance().getUid();
         Picasso.get()
                 .load(getIntent().getStringExtra("profile"))
                 .placeholder(R.drawable.avatar)
@@ -123,6 +131,15 @@ public class MessageActivity extends AppCompatActivity {
 
         binding.userChatName.setText(name);
 
+        binding.attachmentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent,PICK_IMAGE);
+            }
+        });
 
         binding.backChatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +147,25 @@ public class MessageActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE || requestCode == RESULT_OK || data!=null || data.getData()!=null){
+            uri = data.getData();
+            String url = uri.toString();
+            Intent intent = new Intent(MessageActivity.this,SendImageActivity.class);
+            intent.putExtra("u",url);
+
+            intent.putExtra("ruid",receiverUid);
+            intent.putExtra("suid",senderUid);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "No file Selected", Toast.LENGTH_SHORT).show();
+        }
 
     }
 }
