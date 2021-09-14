@@ -53,9 +53,7 @@ public class SendImageActivity extends AppCompatActivity {
 
         database.getReference().child("chats")
                 .child(senderRoom)
-
                 .child("image");
-
 
         binding.btnSendImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +68,6 @@ public class SendImageActivity extends AppCompatActivity {
 
                         database.getReference().child("chats")
                                 .child(receiverRoom)
-
                                 .child("image")
                                 .push()
                                 .setValue(selectedImage).addOnSuccessListener(new OnSuccessListener<Void>() {
