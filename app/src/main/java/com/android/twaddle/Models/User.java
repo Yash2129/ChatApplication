@@ -1,7 +1,7 @@
 package com.android.twaddle.Models;
 
 public class User {
-    private String uid, name,about,phoneNumber, profileImage;
+    private String uid, name,about,phoneNumber, profileImage,token;
 
     public String getUid() {
         return uid;
@@ -51,5 +51,13 @@ public class User {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
