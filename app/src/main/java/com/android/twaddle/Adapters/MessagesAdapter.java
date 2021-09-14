@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.twaddle.Models.Message;
 import com.android.twaddle.R;
 import com.android.twaddle.databinding.ItemSentBinding;
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -59,11 +60,28 @@ public class MessagesAdapter extends RecyclerView.Adapter {
 
         if (holder.getClass() == SentViewHolder.class){
             SentViewHolder viewHolder = (SentViewHolder)holder;
+
+            if (message.getMessage().equals("photo")){
+                viewHolder.binding.iv.setVisibility(View.VISIBLE);
+                viewHolder.binding.message.setVisibility(View.GONE);
+                Glide.with(context).load(message.getImageUrl()).into(viewHolder.binding.iv);
+            }
+
             viewHolder.binding.message.setText(message.getMessage());
+
+
 
         }else {
             RecieverViewHolder viewHolder = (RecieverViewHolder)holder;
+
+            if (message.getMessage().equals("photo")){
+                viewHolder.binding.iv.setVisibility(View.VISIBLE);
+                viewHolder.binding.message.setVisibility(View.GONE);
+                Glide.with(context).load(message.getImageUrl()).placeholder(R.drawable.avatar).into(viewHolder.binding.iv);
+            }
+
             viewHolder.binding.message.setText(message.getMessage());
+
         }
     }
 
