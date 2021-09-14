@@ -39,7 +39,6 @@ public class MessageActivity extends AppCompatActivity {
     String senderUid;
     private static final int PICK_IMAGE=1;
     Uri uri;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +55,8 @@ public class MessageActivity extends AppCompatActivity {
 
 
         String name = getIntent().getStringExtra("name");
-        receiverUid = getIntent().getStringExtra("uid");
-        senderUid = FirebaseAuth.getInstance().getUid();
+        String receiverUid = getIntent().getStringExtra("uid");
+        String senderUid = FirebaseAuth.getInstance().getUid();
         Picasso.get()
                 .load(getIntent().getStringExtra("profile"))
                 .placeholder(R.drawable.avatar)
