@@ -153,19 +153,25 @@ public class MessageActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE || requestCode == RESULT_OK || data!=null || data.getData()!=null){
-            uri = data.getData();
-            String url = uri.toString();
-            Intent intent = new Intent(MessageActivity.this,SendImageActivity.class);
-            intent.putExtra("u",url);
 
-            intent.putExtra("ruid",receiverUid);
-            intent.putExtra("suid",senderUid);
-            startActivity(intent);
+        if (data != null ){
+            if(data.getData()!=null){
+                uri = data.getData();
+                String url = uri.toString();
+                Intent intent = new Intent(MessageActivity.this,SendImageActivity.class);
+                intent.putExtra("u",url);
+
+                intent.putExtra("ruid",receiverUid);
+                intent.putExtra("suid",senderUid);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "No file Selected", Toast.LENGTH_SHORT).show();
+            }
+
+
         }
-        else {
-            Toast.makeText(this, "No file Selected", Toast.LENGTH_SHORT).show();
-        }
+
 
     }
 }
