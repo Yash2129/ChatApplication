@@ -131,7 +131,7 @@ public class MessageActivity extends AppCompatActivity {
 
         binding.userChatName.setText(name);
 
-        binding.attachmentBtn.setOnClickListener(new View.OnClickListener() {
+        binding.msgCameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
