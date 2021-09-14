@@ -58,7 +58,8 @@ public class MessageActivity extends AppCompatActivity {
     String receiverUid;
     String senderUid;
 
-    User user;
+    String notificationName;
+
     ProgressDialog dialog;
 
     @Override
@@ -66,6 +67,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMessageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
 
 
@@ -133,6 +135,23 @@ public class MessageActivity extends AppCompatActivity {
                     }
                 });
 
+        database.getReference().child("users").child(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User users =snapshot.getValue(User.class);
+
+                        notificationName = users.getName();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,7 +183,7 @@ public class MessageActivity extends AppCompatActivity {
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                sendNotification(getIntent().getStringExtra("name"),message.getMessage(),token);
+                                sendNotification(notificationName,message.getMessage(),token);
                             }
                         });
 
