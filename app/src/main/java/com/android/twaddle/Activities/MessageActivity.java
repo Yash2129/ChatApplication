@@ -37,8 +37,7 @@ public class MessageActivity extends AppCompatActivity {
     String senderRoom, receiverRoom;
     String receiverUid;
     String senderUid;
-    private static final int PICK_IMAGE=1;
-    Uri uri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,15 +130,7 @@ public class MessageActivity extends AppCompatActivity {
 
         binding.userChatName.setText(name);
 
-        binding.msgCameraBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent,PICK_IMAGE);
-            }
-        });
+
 
         binding.backChatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,28 +141,7 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (data != null ){
-            if(data.getData()!=null){
-                uri = data.getData();
-                String url = uri.toString();
-                Intent intent = new Intent(MessageActivity.this,SendImageActivity.class);
-                intent.putExtra("u",url);
-
-                intent.putExtra("ruid",receiverUid);
-                intent.putExtra("suid",senderUid);
-                startActivity(intent);
-            }
-            else {
-                Toast.makeText(this, "No file Selected", Toast.LENGTH_SHORT).show();
-            }
 
 
-        }
 
-
-    }
 }
