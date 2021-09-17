@@ -2,15 +2,12 @@ package com.android.twaddle.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.android.twaddle.BottomNavigation.CameraActivity;
-import com.android.twaddle.BottomNavigation.StoryActivity;
 import com.android.twaddle.Models.User;
 import com.android.twaddle.Adapters.UserAdapter;
 import com.android.twaddle.R;
@@ -48,17 +45,7 @@ public class ChatActivity extends AppCompatActivity {
 
                         //Toast.makeText(ChatActivity.this,"Chat Selected",Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.story_btn:
 
-                        Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
-                        startActivity(intent);
-                        //Toast.makeText(ChatActivity.this,"Story Selected",Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.camera_btn:
-                        Intent intent2 = new Intent(getApplicationContext(), CameraActivity.class);
-                        startActivity(intent2);
-                        //Toast.makeText(ChatActivity.this,"Camera Selected",Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.call_btn:
                         //Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
                         //startActivity(intent);

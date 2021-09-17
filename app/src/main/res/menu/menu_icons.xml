@@ -6,14 +6,6 @@
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
     <item
-        android:id="@+id/story_btn"
-        android:icon="@drawable/ic_stories"
-        android:title="Story" />
-    <item
-        android:id="@+id/camera_btn"
-        android:icon="@drawable/ic_camera"
-        android:title="Camera" />
-    <item
         android:id="@+id/call_btn"
         android:icon="@drawable/ic_phonecall"
         android:title="Call" />

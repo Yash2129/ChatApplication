@@ -1,9 +1,12 @@
 package com.android.twaddle.Activities;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -11,9 +14,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.twaddle.Adapters.MessagesAdapter;
+import com.android.twaddle.BottomNavigation.CameraActivity;
 import com.android.twaddle.Models.Message;
 import com.android.twaddle.Models.User;
 import com.android.twaddle.R;
@@ -204,6 +210,16 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
+       binding.msgCameraBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               Intent intent = new Intent(getApplicationContext(),CameraActivity.class);
+               intent.putExtra("senderuid",senderUid);
+               intent.putExtra("receiveruid",receiverUid);
+               startActivity(intent);
+           }
+       });
 
         binding.backChatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
