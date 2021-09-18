@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.android.twaddle.BottomNavigation.CameraActivity;
 import com.android.twaddle.Models.User;
 import com.android.twaddle.Adapters.UserAdapter;
 import com.android.twaddle.R;
@@ -28,8 +27,6 @@ public class ChatActivity extends AppCompatActivity {
     ArrayList<User> users;
     UserAdapter userAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +44,8 @@ public class ChatActivity extends AppCompatActivity {
                         break;
 
                     case R.id.call_btn:
+                       // Intent intent3 = new Intent(getApplicationContext(), CallActivity.class);
+                        //startActivity(intent3);
                         //Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
                         //startActivity(intent);
                         //Toast.makeText(ChatActivity.this,"Call Selected",Toast.LENGTH_SHORT).show();
@@ -97,6 +96,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
     }
+
 
     @Override
     public void onBackPressed() {
