@@ -60,6 +60,7 @@
                 app:srcCompat="@drawable/ic_camera" />
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -77,7 +78,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+
         android:orientation="horizontal"
         android:padding="12dp"
         android:translationZ="10dp"
@@ -101,14 +102,37 @@
             android:layout_weight="0"
             app:srcCompat="@drawable/defaultuserdp" />
 
-        <TextView
-            android:id="@+id/user_chat_name"
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="UserName"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_chat_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="UserName"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="sans-serif-light"
+                android:text="Online"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
