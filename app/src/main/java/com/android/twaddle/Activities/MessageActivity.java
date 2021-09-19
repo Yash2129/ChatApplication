@@ -215,12 +215,13 @@ public class MessageActivity extends AppCompatActivity {
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                if (getApplicationContext() == MessageActivity.this){
+                                if (getApplicationContext() != MessageActivity.this){
 
-                                }
-                                else {
                                     sendNotification(notificationName, message.getMessage(), token);
                                 }
+
+
+
                             }
                         });
 
