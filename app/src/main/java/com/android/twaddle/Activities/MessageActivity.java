@@ -77,8 +77,6 @@ public class MessageActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-
-
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         FirebaseMessaging.getInstance()
@@ -372,7 +370,6 @@ public class MessageActivity extends AppCompatActivity {
                                         database.getReference().child("chats")
                                                 .child(senderRoom)
                                                 .child("messages")
-
                                                 .push()
                                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
