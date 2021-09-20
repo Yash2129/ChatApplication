@@ -43,17 +43,17 @@ public class ChatActivity extends AppCompatActivity {
                         //Toast.makeText(ChatActivity.this,"Chat Selected",Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.call_btn:
-                       // Intent intent3 = new Intent(getApplicationContext(), CallActivity.class);
-                        //startActivity(intent3);
-                        //Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
-                        //startActivity(intent);
-                        //Toast.makeText(ChatActivity.this,"Call Selected",Toast.LENGTH_SHORT).show();
+                    case R.id.group_btn:
+                       Intent intent3 = new Intent(getApplicationContext(), GroupChatActivity.class);
+                       startActivity(intent3);
+                        binding.bottomNavigationView.setSelectedItemId(R.id.chat_btn);
+
                         break;
                     case R.id.settings_btn:
 
                         Intent intent4 = new Intent(getApplicationContext(), ChatSettings.class);
                         startActivity(intent4);
+                        binding.bottomNavigationView.setSelectedItemId(R.id.chat_btn);
                         //Toast.makeText(ChatActivity.this,"Settings Selected",Toast.LENGTH_SHORT).show();
                         break;
                 }

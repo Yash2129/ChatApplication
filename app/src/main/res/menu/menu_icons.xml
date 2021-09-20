@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
     <item
-        android:id="@+id/call_btn"
-        android:icon="@drawable/ic_phonecall"
-        android:title="Call" />
+        android:id="@+id/group_btn"
+        android:icon="@drawable/group"
+        android:title="Groups" />
     <item
         android:id="@+id/settings_btn"
         android:icon="@drawable/ic_settings"

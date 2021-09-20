@@ -193,6 +193,8 @@ public class MessageActivity extends AppCompatActivity {
                 Message message = new Message(messageTxt, senderUid, date.getTime());
                 binding.msgBox.setText("");
 
+                String randomKey = database.getReference().push().getKey();
+
                 HashMap<String, Object> lastMsgObj = new HashMap<>();
                 lastMsgObj.put("lastMsg",message.getMessage());
                 lastMsgObj.put("lastMsgTime", date.getTime());
@@ -203,6 +205,7 @@ public class MessageActivity extends AppCompatActivity {
                 database.getReference().child("chats")
                         .child(senderRoom)
                         .child("messages")
+                        .child(randomKey)
                         .push()
                         .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -211,6 +214,7 @@ public class MessageActivity extends AppCompatActivity {
                         database.getReference().child("chats")
                                 .child(receiverRoom)
                                 .child("messages")
+                                .child(randomKey)
                                 .push()
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -358,6 +362,8 @@ public class MessageActivity extends AppCompatActivity {
                                         message.setImageUrl(filePath);
                                         binding.msgBox.setText("");
 
+                                        String randomKey = database.getReference().push().getKey();
+
                                         HashMap<String, Object> lastMsgObj = new HashMap<>();
                                         lastMsgObj.put("lastMsg",message.getMessage());
                                         lastMsgObj.put("lastMsgTime", date.getTime());
@@ -368,6 +374,7 @@ public class MessageActivity extends AppCompatActivity {
                                         database.getReference().child("chats")
                                                 .child(senderRoom)
                                                 .child("messages")
+                                                .child(randomKey)
                                                 .push()
                                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -376,6 +383,7 @@ public class MessageActivity extends AppCompatActivity {
                                                 database.getReference().child("chats")
                                                         .child(receiverRoom)
                                                         .child("messages")
+                                                        .child(randomKey)
                                                         .push()
                                                         .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
