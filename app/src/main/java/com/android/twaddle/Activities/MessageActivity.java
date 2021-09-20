@@ -205,7 +205,6 @@ public class MessageActivity extends AppCompatActivity {
                 database.getReference().child("chats")
                         .child(senderRoom)
                         .child("messages")
-                        .child(randomKey)
                         .push()
                         .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -214,7 +213,6 @@ public class MessageActivity extends AppCompatActivity {
                         database.getReference().child("chats")
                                 .child(receiverRoom)
                                 .child("messages")
-                                .child(randomKey)
                                 .push()
                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -374,7 +372,7 @@ public class MessageActivity extends AppCompatActivity {
                                         database.getReference().child("chats")
                                                 .child(senderRoom)
                                                 .child("messages")
-                                                .child(randomKey)
+
                                                 .push()
                                                 .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -383,7 +381,6 @@ public class MessageActivity extends AppCompatActivity {
                                                 database.getReference().child("chats")
                                                         .child(receiverRoom)
                                                         .child("messages")
-                                                        .child(randomKey)
                                                         .push()
                                                         .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
