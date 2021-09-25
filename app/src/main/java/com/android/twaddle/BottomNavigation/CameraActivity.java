@@ -113,7 +113,7 @@ public class CameraActivity extends AppCompatActivity {
                                       message.setMessage("photo");
                                       message.setImageUrl(filePath);
 
-                                      String randomKey = database.getReference().push().getKey();
+
 
                                       HashMap<String, Object> lastMsgObj = new HashMap<>();
                                       lastMsgObj.put("lastMsg",message.getMessage());
@@ -125,7 +125,6 @@ public class CameraActivity extends AppCompatActivity {
                                       database.getReference().child("chats")
                                               .child(senderRoom)
                                               .child("messages")
-                                              .child(randomKey)
                                               .push()
                                               .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                           @Override
@@ -134,7 +133,6 @@ public class CameraActivity extends AppCompatActivity {
                                               database.getReference().child("chats")
                                                       .child(receiverRoom)
                                                       .child("messages")
-                                                      .child(randomKey)
                                                       .push()
                                                       .setValue(message).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                   @Override
